@@ -63,6 +63,24 @@
                             <input type="text" placeholder="Cerca o inizia una nuova chat">
                         </div>
 
+                        <!-- Inizio lista contatti -->
+                        <div class="contact-list">
+                            <ul>
+                                <li class="flex" v-for="(contact, index) in contacts">
+                                    <!-- <img src="img/avatar_1.jpg"> -->
+                                    <img :src="'img/avatar' + contact.avatar + '.jpg'">
+                                    
+                                    <div class="contact-info">
+                                        <span>{{contact.name}}</span>
+                                        <p>{{contact.avatar}}</p>
+                                    </div>
+
+                                    <p>Ultimo accesso</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Fine lista contatti -->
+
                     </div>
                     <!-- Fine pannello contatti -->
 
@@ -96,7 +114,15 @@
                     <!-- Fine pannello contatto attivo -->
 
                     <!-- Inizio pannello conversazione -->
-                    <div class="conversation-panel">
+                    <div class="conversation-panel flex">
+
+                        <div class="message user-msg">
+                            Testo utente
+                        </div>
+
+                        <div class="message contact-msg">
+                            Testo contatto
+                        </div>
 
                     </div>
                     <!-- Fine pannello conversazione -->
@@ -104,7 +130,7 @@
                     <!-- Inizio barra conversazione -->
                     <div class="chat-bar flex">
 
-                        <i class="fa-solid fa-face-smile"></i>
+                        <i class="fa-regular fa-face-smile"></i>
                         <input type="text" placeholder="Scrivi un messaggio">
                         <i class="fa-solid fa-microphone"></i>
 
@@ -124,6 +150,6 @@
     <!-- Fine container vue -->
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <style type="text/javascript" src="main.js"></style>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

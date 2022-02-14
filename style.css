@@ -18,6 +18,24 @@ img {
     border-radius: 50%;
 }
 
+.message {
+    height: 40px;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 2%;
+    margin: 2%;
+}
+
+.user-msg {
+    background-color: #d6f9ba;
+    align-self: flex-end;
+}
+
+.contact-msg {
+    background-color: white;
+    align-self: flex-start;
+}
+
 /* Regole main */
 main {
     background-color: lightgray;
@@ -84,8 +102,19 @@ main {
 }
 
 .contact-panel {
-    background-color: brown;
+    background-color: white;
     min-height: 70%;
+}
+
+.contact-list ul li {
+    justify-content: space-around;
+    border: 1px solid #b2b2b2;
+    padding: 10px 0;
+}
+
+.contact-list ul li:hover {
+    background-color: #b2b2b2;
+    cursor: pointer;
 }
 
 .search-input {
@@ -119,6 +148,7 @@ main {
 .conversation-panel {
     background-image: url("img/mine.jpg");
     min-height: 80%;
+    flex-direction: column;
 }
 
 .chat-bar {
