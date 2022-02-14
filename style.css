@@ -13,6 +13,11 @@
     display: flex;
 }
 
+img {
+    width: 60px;
+    border-radius: 50%;
+}
+
 /* Regole main */
 main {
     background-color: lightgray;
@@ -42,18 +47,62 @@ main {
 
 /* Regole pannelli sinistra */
 .user-panel {
-    background-color: green;
+    background-color: #ebebeb;
     min-height: 10%;
+    justify-content: space-between;
+}
+
+.user-avatar {
+    justify-content: center;
+    align-items: center;
+}
+
+.user-icons {
+    color: #b2b2b2;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+}
+
+.user-icons i {
+    padding: 0 10px;
 }
 
 .notification-panel {
-    background-color: purple;
+    background-color: #8edafc;
     min-height: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-bell-slash {
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: white;
+    color: #8edafc;
 }
 
 .contact-panel {
     background-color: brown;
     min-height: 70%;
+}
+
+.search-input {
+    width: 100%;
+    background-color: white;
+    align-items: center;
+}
+
+.search-input input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+}
+
+.search-input i {
+    margin: 0 10px;
+    color: #b2b2b2;
 }
 
 /* Regole pannelli destra */
