@@ -1,5 +1,73 @@
+/* COMMON */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.debug {
+    border: 1px solid black;
+}
+
+.flex {
+    display: flex;
+}
+
+/* Regole main */
+main {
+    background-color: lightgray;
+    padding: 20px 0;
+}
+
+/* Regole container */
+.container {
+    width: 70%;
+    margin: 0px auto;
+    height: 100vh;
+}
+
+.container-left {
+    height: 100%;
+    background-color: red;
+    width: 40%;
+    float: left;
+}
+
+.container-right {
+    height: 100%;
+    background-color: blue;
+    width: 60%;
+    float: right;
+}
+
+/* Regole pannelli sinistra */
+.user-panel {
+    background-color: green;
+    min-height: 10%;
+}
+
+.notification-panel {
+    background-color: purple;
+    min-height: 20%;
+}
+
+.contact-panel {
+    background-color: brown;
+    min-height: 70%;
+}
+
+/* Regole pannelli destra */
+.active-panel {
+    background-color: cyan;
+    min-height: 10%;
+}
+
+.conversation-panel {
+    background-color: darkgoldenrod;
+    min-height: 80%;
+}
+
+.chat-bar {
+    background-color: yellowgreen;
+    min-height: 10%;
 }
