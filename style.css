@@ -107,16 +107,35 @@ main {
 
 /* Regole pannelli destra */
 .active-panel {
-    background-color: cyan;
+    background-color: #ebebeb;
     min-height: 10%;
+    justify-content: space-between;
+}
+
+.contact-details {
+    flex-direction: column;
 }
 
 .conversation-panel {
-    background-color: darkgoldenrod;
+    background-image: url("img/mine.jpg");
     min-height: 80%;
 }
 
 .chat-bar {
-    background-color: yellowgreen;
+    background-color: #ebebeb;
     min-height: 10%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-bar input {
+    width: 100%;
+    border: none;
+    padding: 15px;
+}
+
+.chat-bar i {
+    font-size: 20px;
+    padding: 20px;
+    color: #b2b2b2;
 }
