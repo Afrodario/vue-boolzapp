@@ -60,14 +60,18 @@
 
                         <div class="search-input flex">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" 
+                            placeholder="Cerca o inizia una nuova chat"
+                            v-model="search"
+                            >
                         </div>
 
                         <!-- Inizio lista contatti -->
                         <div class="contact-list">
                             <ul>
-                                <li class="flex" 
+                                <li class="flex"
                                     v-for="(contact, index) in contacts"
+                                    v-if="contact.name.toLowerCase().includes(search.toLowerCase())"
                                     @click="showChat(index)">
                             
                                     <img :src="'img/avatar' + contact.avatar + '.jpg'">
@@ -106,11 +110,11 @@
 
                         <!-- Inizio controlli contatto -->
                         <div class="user-avatar flex">
-                            <img src="img/avatar_1.jpg">
+                            <img :src="'img/avatar' + contacts[active].avatar + '.jpg'">
                             <div class="contact-details flex">
-                                <span>Nome utente</span>
-                                <p>Ultimo accesso</p>
-                                <p>Ora</p>
+                                <span>{{contacts[active].name}}</span>
+                                <p>Ultimo accesso oggi alle 
+                                    {{contacts[active].messages[active].date}}</p>
                             </div>
                         </div>
 

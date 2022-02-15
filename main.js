@@ -89,6 +89,7 @@ const app = new Vue(
             ],
             active: 0,
             newMsg: "",
+            search: "",
         },
 
         methods: {
@@ -117,7 +118,8 @@ const app = new Vue(
                     );
                 }
                 , 1000)
-            }
+            },
+
         }
     }
 );
