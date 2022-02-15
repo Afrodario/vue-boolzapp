@@ -210,9 +210,9 @@ main {
     flex-direction: column;
 }
 
-/* .conversation-list li {
-    margin: 10px 0;
-} */
+.conversation-list li {
+    margin: 5px 0;
+}
 
 .chat-bar {
     background-color: #ebebeb;

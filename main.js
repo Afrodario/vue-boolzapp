@@ -87,15 +87,13 @@ const app = new Vue(
                     ],
                 },
             ],
+            active: 0,
         },
 
         methods: {
             showChat(index) {
-                if (this.contacts[index].visible == false) {
-                    this.contacts[index].visible = true;
-                }
-                console.log(this.contacts[index].visible)
-                return this.contacts[index].visible;
+                this.active = index;
+                console.log(this.active);
             }
         }
     }

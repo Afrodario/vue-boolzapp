@@ -127,16 +127,13 @@
                     <!-- Inizio pannello conversazione -->
                     <div class="conversation-panel flex">
 
-                        <ul class="conversation-list flex" 
-                            v-for="(contact, i) in contacts">
-                            <li 
-                            v-for="(message, j) in contact.messages"
-                            :class="message.status == 'sent'?'user-msg':'contact-msg' ">
-                                <div class="message"
-                                    v-if="contacts[i].visible == true">
-                                    {{contacts[0].messages[j].text}}
-                                    <div class="message-date">
-                                        Segnaposto
+                        <ul class="conversation-list flex">
+                            <li v-for="(message, index) in contacts[active].messages"
+                                :class="message.status == 'sent'?'user-msg':'contact-msg' ">
+                                <div class="message">
+                                    {{message.text}}
+                                    <div class="message-date" >
+                                        {{message.date}}
                                     </div>
                                 </div>
                             </li>
