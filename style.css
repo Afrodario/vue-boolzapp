@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: sans-serif;
+}
+
 .debug {
     border: 1px solid black;
 }
@@ -18,27 +22,43 @@ img {
     border-radius: 50%;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .message {
     height: 40px;
-    border-radius: 10px;
     font-weight: bold;
+    font-size: 13px;
     padding: 2%;
     margin: 2%;
+    min-width: 150px;
+    position: relative;
+}
+
+.message-date {
+    font-size: 11px;
+    color: #b2b2b2;
+    position: absolute;
+    right: 10px;
+    bottom: 0;
 }
 
 .user-msg {
     background-color: #d6f9ba;
     align-self: flex-end;
+    border-radius: 10px;
 }
 
 .contact-msg {
     background-color: white;
     align-self: flex-start;
+    border-radius: 10px;
 }
 
 /* Regole main */
 main {
-    background-color: lightgray;
+    background-image: linear-gradient(180deg, #159c88 15%, #dadbd4 15%);
     padding: 20px 0;
 }
 
@@ -51,16 +71,20 @@ main {
 
 .container-left {
     height: 100%;
-    background-color: red;
     width: 40%;
     float: left;
 }
 
 .container-right {
     height: 100%;
-    background-color: blue;
     width: 60%;
-    float: right;
+    float: left;
+}
+
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* Regole pannelli sinistra */
@@ -88,9 +112,18 @@ main {
 
 .notification-panel {
     background-color: #8edafc;
-    min-height: 20%;
-    justify-content: center;
+    min-height: 10%;
+    justify-content: space-evenly;
     align-items: center;
+    padding: 10px 0;
+}
+
+.notification-details p:first-child {
+    font-weight: bold;
+}
+
+.notification-details p:last-child {
+    text-decoration: underline;
 }
 
 .fa-bell-slash {
@@ -103,17 +136,17 @@ main {
 
 .contact-panel {
     background-color: white;
-    min-height: 70%;
+    min-height: 80%;
+    overflow-y: scroll;
 }
 
 .contact-list ul li {
-    justify-content: space-around;
-    border: 1px solid #b2b2b2;
-    padding: 10px 0;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .contact-list ul li:hover {
-    background-color: #b2b2b2;
+    background-color: #eaeaea;
     cursor: pointer;
 }
 
@@ -134,6 +167,27 @@ main {
     color: #b2b2b2;
 }
 
+.contact-info {
+    width: 50%;
+}
+
+.contact-info p, .last-access p {
+    font-size: 15px;
+    color: lightgray;
+    font-weight: bold;
+}
+
+.contact-info span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.contact-info div p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /* Regole pannelli destra */
 .active-panel {
     background-color: #ebebeb;
@@ -149,7 +203,16 @@ main {
     background-image: url("img/mine.jpg");
     min-height: 80%;
     flex-direction: column;
+    padding: 20px;
 }
+
+.conversation-list {
+    flex-direction: column;
+}
+
+/* .conversation-list li {
+    margin: 10px 0;
+} */
 
 .chat-bar {
     background-color: #ebebeb;

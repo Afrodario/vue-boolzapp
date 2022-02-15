@@ -17,7 +17,7 @@
         <main>
 
             <!-- Inizio finestra -->
-            <div class="container debug">
+            <div class="container">
 
                 <!-- Inizio sezione sinistra -->
                 <div class="container-left">
@@ -66,16 +66,27 @@
                         <!-- Inizio lista contatti -->
                         <div class="contact-list">
                             <ul>
-                                <li class="flex" v-for="(contact, index) in contacts">
-                                    <!-- <img src="img/avatar_1.jpg"> -->
+                                <li class="flex" 
+                                    v-for="(contact, index) in contacts"
+                                    @click="showChat(index)">
+                            
                                     <img :src="'img/avatar' + contact.avatar + '.jpg'">
                                     
                                     <div class="contact-info">
                                         <span>{{contact.name}}</span>
-                                        <p>{{contact.avatar}}</p>
+                                        <div v-for="(message, index) in contact.messages">
+                                            <p v-if="index == contact.messages.length - 1">
+                                                {{message.text}}
+                                            </p>
+                                        </div>
                                     </div>
 
-                                    <p>Ultimo accesso</p>
+                                    <div class="last-access"
+                                        v-for="(message, index) in contact.messages">
+                                        <p v-if="index == contact.messages.length - 1">
+                                            {{message.date}}
+                                        </p>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -116,13 +127,20 @@
                     <!-- Inizio pannello conversazione -->
                     <div class="conversation-panel flex">
 
-                        <div class="message user-msg">
-                            Testo utente
-                        </div>
-
-                        <div class="message contact-msg">
-                            Testo contatto
-                        </div>
+                        <ul class="conversation-list flex" 
+                            v-for="(contact, i) in contacts">
+                            <li 
+                            v-for="(message, j) in contact.messages"
+                            :class="message.status == 'sent'?'user-msg':'contact-msg' ">
+                                <div class="message"
+                                    v-if="contacts[i].visible == true">
+                                    {{contacts[0].messages[j].text}}
+                                    <div class="message-date">
+                                        Segnaposto
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
 
                     </div>
                     <!-- Fine pannello conversazione -->
