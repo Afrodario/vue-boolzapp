@@ -88,12 +88,35 @@ const app = new Vue(
                 },
             ],
             active: 0,
+            newMsg: "",
         },
 
         methods: {
             showChat(index) {
                 this.active = index;
                 console.log(this.active);
+            },
+
+            addNewMsg() {
+                let inputMsg = this.contacts[this.active].messages;
+                inputMsg.push(
+                    {
+                        date: 'segnaposto',
+                        text: this.newMsg,
+                        status: 'sent'
+                    }
+                );
+                this.newMsg = "";
+                setTimeout(function() {
+                    inputMsg.push(
+                        {
+                            date: 'segnaposto',
+                            text: "ok",
+                            status: 'received'
+                        }
+                    );
+                }
+                , 1000)
             }
         }
     }
