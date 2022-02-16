@@ -125,6 +125,11 @@ const app = new Vue(
                 console.log(index);
                 this.show = index;
             },
+
+            deleteMsg(index) {
+                let indexMsg = this.contacts[this.active].messages;
+                indexMsg.splice(index, 1);
+            }
         }
     }
 );

@@ -55,15 +55,24 @@ ul {
 }
 
 .dropdown {
-    border: 1px solid black;
+    border-radius: 10px;
     position: absolute;
     background-color: white;
     top: 45px;
-    box-shadow: black;
+    box-shadow: 2px 2px;
     min-width: 170px;
     text-align: center;
     padding: 10px;
     z-index: 10;
+}
+
+.dropdown ul li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown ul li:hover {
+    background-color: #b2b2b2;
 }
 
 /* Regole main */

@@ -142,7 +142,9 @@
                                             v-if="show == index">
                                             <ul>
                                                 <li>Info messaggio</li>
-                                                <li>Cancella messaggio</li>
+                                                <li @click="deleteMsg(index)">
+                                                    Cancella messaggio
+                                                </li>
                                             </ul>
                                         </div>
                                     <div class="message-date" >
