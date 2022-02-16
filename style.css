@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 .debug {
@@ -17,23 +17,17 @@ body {
     display: flex;
 }
 
-img {
-    width: 60px;
-    border-radius: 50%;
-}
-
 ul {
     list-style-type: none;
 }
 
 .message {
-    height: 40px;
     font-weight: bold;
     font-size: 13px;
-    padding: 2%;
-    margin: 2%;
+    padding: 15px 20px;
     min-width: 150px;
     position: relative;
+    justify-content: space-between;
 }
 
 .message-date {
@@ -54,6 +48,21 @@ ul {
     background-color: white;
     align-self: flex-start;
     border-radius: 10px;
+}
+
+.active {
+    background-color: #eaeaea;
+}
+
+.dropdown {
+    border: 1px solid black;
+    position: absolute;
+    background-color: white;
+    top: 45px;
+    box-shadow: black;
+    min-width: 170px;
+    text-align: center;
+    padding: 10px;
 }
 
 /* Regole main */
@@ -92,11 +101,24 @@ main {
     background-color: #ebebeb;
     min-height: 10%;
     justify-content: space-between;
+    border-right: 1px solid gray;
 }
 
 .user-avatar {
     justify-content: center;
     align-items: center;
+    width: 40%;
+    padding: 5px;
+}
+
+.user-avatar img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.user-avatar span {
+    font-weight: bold;
+    padding: 5px;
 }
 
 .user-icons {
@@ -150,6 +172,11 @@ main {
     cursor: pointer;
 }
 
+.contact-list img {
+    width: 50px;
+    border-radius: 50%;
+}
+
 .search-input {
     width: 100%;
     background-color: white;
@@ -188,6 +215,16 @@ main {
     text-overflow: ellipsis;
 }
 
+.contact-details span {
+    font-weight: bold;
+}
+
+.contact-details p {
+    color: gray;
+    font-weight: bold;
+    font-size: 12px;
+}
+
 /* Regole pannelli destra */
 .active-panel {
     background-color: #ebebeb;
@@ -204,6 +241,7 @@ main {
     min-height: 80%;
     flex-direction: column;
     padding: 20px;
+    overflow-y: scroll;
 }
 
 .conversation-list {

@@ -90,6 +90,7 @@ const app = new Vue(
             active: 0,
             newMsg: "",
             search: "",
+            show: ""
         },
 
         methods: {
@@ -102,7 +103,7 @@ const app = new Vue(
                 let inputMsg = this.contacts[this.active].messages;
                 inputMsg.push(
                     {
-                        date: 'segnaposto',
+                        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                         text: this.newMsg,
                         status: 'sent'
                     }
@@ -111,7 +112,7 @@ const app = new Vue(
                 setTimeout(function() {
                     inputMsg.push(
                         {
-                            date: 'segnaposto',
+                            date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                             text: "ok",
                             status: 'received'
                         }
@@ -119,6 +120,11 @@ const app = new Vue(
                 }
                 , 1000)
             },
+
+            showDrop(index) {
+                console.log(index);
+                this.show = index;
+            }
 
         }
     }
