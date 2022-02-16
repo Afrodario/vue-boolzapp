@@ -90,7 +90,7 @@ const app = new Vue(
             active: 0,
             newMsg: "",
             search: "",
-            show: ""
+            show: null
         },
 
         methods: {
@@ -124,8 +124,7 @@ const app = new Vue(
             showDrop(index) {
                 console.log(index);
                 this.show = index;
-            }
-
+            },
         }
     }
 );
