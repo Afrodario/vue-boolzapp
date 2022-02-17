@@ -70,6 +70,7 @@
                         <div class="contact-list">
                             <ul>
                                 <li class="flex"
+                                    :class="(index == active)?'active':''"
                                     v-for="(contact, index) in contacts"
                                     v-if="contact.name.toLowerCase().includes(search.toLowerCase())"
                                     @click="showChat(index)">
